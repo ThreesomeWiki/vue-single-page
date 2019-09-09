@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style lang="scss">
+::-webkit-scrollbar {
+    width: 0 !important;
+}
 html,
 body {
     margin: 0 auto;
