@@ -72,8 +72,9 @@ body {
     position: fixed;
     top: 0.44rem;
     right: 0;
-    bottom: 0;
+    bottom: 0.5rem;
     left: 0;
+    overflow: scroll;
 }
 .flex1 {
     display: flex;
@@ -86,6 +87,18 @@ body {
 .flex-column {
     display: flex;
     flex-direction: column;
+}
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .justify-content-center {
     justify-content: center;
