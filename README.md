@@ -11,3 +11,7 @@ npm start
 ## 美图
 
 -   https://www.mzitu.com/ 妹子图
+
+## vux
+
+https://doc.vux.li/zh-CN/components/v-chart.html

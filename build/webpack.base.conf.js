@@ -3,6 +3,7 @@ const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
 const vueLoaderConfig = require('./vue-loader.conf');
+const vuxLoader = require('vux-loader');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
@@ -19,7 +20,7 @@ const createLintingRule = () => ({
     },
 });
 
-module.exports = {
+const webpackConfig = {
     context: path.resolve(__dirname, '../'),
     entry: {
         app: './src/main.js',
@@ -84,6 +85,10 @@ module.exports = {
                 test: /\.scss$/,
                 use: ['vue-style-loader', 'css-loader', 'sass-loader'],
             },
+            {
+                test: /\.less$/,
+                loader: ['less-loader', 'css-loader'], // 将 Less 编译为 CSS
+            },
         ],
     },
     node: {
@@ -99,3 +104,7 @@ module.exports = {
         child_process: 'empty',
     },
 };
+
+module.exports = vuxLoader.merge(webpackConfig, {
+    plugins: ['vux-ui'],
+});
