@@ -19,6 +19,9 @@ export default {
     data: function() {
         return {};
     },
+    mounted: function() {
+        this.$bus.emit('app-show');
+    },
 };
 </script>>
 <style lang="scss" scoped>

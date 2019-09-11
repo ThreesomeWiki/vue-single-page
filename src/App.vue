@@ -2,10 +2,9 @@
     <div class="App">
         <Drawer
             width="2rem"
-            height="100%"
             show-mode="push"
             placement="left"
-            :show.sync="show"
+            :show="show"
             :drawer-style="{'background-color':'#35495e', width: '2rem'}"
         >
             <!-- 侧边栏 -->
@@ -28,7 +27,7 @@
 
 <script>
 import { Drawer } from 'vux';
-import { setInterval } from 'timers';
+import { setInterval, setTimeout } from 'timers';
 
 export default {
     components: { Drawer },
@@ -56,9 +55,9 @@ export default {
         };
     },
     mounted: function() {
-        setInterval(() => {
+        this.$bus.on('app-show', () => {
             this.show = !this.show;
-        }, 1000);
+        });
     },
 };
 </script>
@@ -103,7 +102,8 @@ body {
     right: 0;
     bottom: 0.5rem;
     left: 0;
-    overflow: scroll;
+    // overflow: scroll;
+    overflow: hidden;
 }
 .flex1 {
     display: flex;
