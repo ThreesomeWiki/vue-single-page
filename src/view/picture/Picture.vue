@@ -6,15 +6,16 @@
                 <cell title="title" value="value" class="cell"></cell>
                 <cell title="title" value="value" class="cell"></cell>
             </Group>
+            <Timeline />
         </div>
     </div>
 </template>
 <script>
 import Header from '@/components/Header';
-import { Group, Cell } from 'vux';
+import { Group, Cell, Timeline } from 'vux';
 
 export default {
-    components: { Header, Group, Cell },
+    components: { Header, Group, Cell, Timeline },
     data: function() {
         return {};
     },

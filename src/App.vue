@@ -1,19 +1,40 @@
 <template>
     <div class="App">
-        <router-view />
-        <!-- footer -->
-        <footer class="Footer flex-row justify-content-around align-items-center">
-            <router-link v-for="(v,k) in tabs" :key="k" class="tab" :to="v.link">
-                <span>{{v.tag}}</span>
-            </router-link>
-        </footer>
+        <Drawer
+            width="2rem"
+            height="100%"
+            show-mode="push"
+            placement="left"
+            :show.sync="show"
+            :drawer-style="{'background-color':'#35495e', width: '2rem'}"
+        >
+            <!-- 侧边栏 -->
+            <div slot="drawer">
+                <div>hello world</div>
+            </div>
+            <!-- 主要编辑区 -->
+            <div>
+                <router-view />
+                <!-- footer -->
+                <footer class="Footer flex-row justify-content-around align-items-center">
+                    <router-link v-for="(v,k) in tabs" :key="k" class="tab" :to="v.link">
+                        <span>{{v.tag}}</span>
+                    </router-link>
+                </footer>
+            </div>
+        </Drawer>
     </div>
 </template>
 
 <script>
+import { Drawer } from 'vux';
+import { setInterval } from 'timers';
+
 export default {
+    components: { Drawer },
     data: function() {
         return {
+            show: false,
             tabs: [
                 {
                     tag: '小说',
@@ -34,6 +55,11 @@ export default {
             ],
         };
     },
+    mounted: function() {
+        setInterval(() => {
+            this.show = !this.show;
+        }, 1000);
+    },
 };
 </script>
 
@@ -45,10 +71,13 @@ html,
 body {
     margin: 0 auto;
     padding: 0;
+    height: 100%;
+    font-size: 0.16rem;
 }
 .App {
     max-width: 500px;
     margin: 0 auto;
+    height: 100%;
 }
 .Footer {
     position: fixed;
