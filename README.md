@@ -2,6 +2,8 @@
 
 npm start
 
+npm run server
+
 ## 小说
 
 -   https://m.qidian.com/ 起点中文网
@@ -13,6 +15,8 @@ npm start
 -   https://www.mzitu.com/ 妹子图
 
 <img src='./md/picture.png' width="375"/>
+
+<img src='./md/picture-v1.png' width="375"/>
 
 ## vux
 

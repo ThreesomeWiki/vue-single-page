@@ -8,8 +8,28 @@
             :drawer-style="{'background-color':'#333332', width: '2.3rem'}"
         >
             <!-- 侧边栏 -->
-            <div slot="drawer">
-                <div>hello world</div>
+            <div slot="drawer" class="drawer">
+                <div class="flex-row justify-content-center align-items-center user">
+                    <img src="http://localhost:3000/meizi/mfiles/img/logo.jpg" />
+                    <div class="flex-column justify-content-center msg">
+                        <span>妹子图</span>
+                        <span class="slogan">美女图片每日更新</span>
+                    </div>
+                </div>
+                <group>
+                    <cell-box class="tab">首页</cell-box>
+                    <cell-box class="tab">下载美之图APP</cell-box>
+                    <cell-box class="tab">性感妹子</cell-box>
+                    <cell-box class="tab">日本妹子</cell-box>
+                    <cell-box class="tab">台湾妹子</cell-box>
+                    <cell-box class="tab">清纯妹子</cell-box>
+                    <cell-box class="tab">妹子自拍</cell-box>
+                    <cell-box class="tab">街拍美女</cell-box>
+                    <cell-box class="tab">热门妹子</cell-box>
+                    <cell-box class="tab">推荐妹子</cell-box>
+                    <cell-box class="tab">美女专题</cell-box>
+                    <cell-box class="tab">每日跟新</cell-box>
+                </group>
             </div>
             <!-- 主要编辑区 -->
             <div>
@@ -26,11 +46,10 @@
 </template>
 
 <script>
-import { Drawer } from 'vux';
-import { setInterval, setTimeout } from 'timers';
+import { Drawer, Cell, CellBox, Group } from 'vux';
 
 export default {
-    components: { Drawer },
+    components: { Drawer, Cell, CellBox, Group },
     data: function() {
         return {
             show: false,
@@ -78,6 +97,32 @@ body {
     max-width: 500px;
     margin: 0 auto;
     height: 100%;
+    .drawer {
+        .tab {
+            background: #1a1a19;
+            color: white;
+            font-size: 0.14rem;
+        }
+        .user {
+            margin: 0.2rem 0;
+            img {
+                width: 0.66rem;
+                height: 0.66rem;
+                border-radius: 0.33rem;
+            }
+            .msg {
+                font-size: 0.12rem;
+                line-height: 0.12rem;
+                margin-left: 0.15rem;
+                color: white;
+                .slogan {
+                    height: 0.29rem;
+                    line-height: 0.29rem;
+                    color: #ff88af;
+                }
+            }
+        }
+    }
 }
 .Footer {
     position: fixed;
