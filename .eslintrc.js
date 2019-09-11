@@ -28,5 +28,6 @@ module.exports = {
         semi: 0,
         'no-console': 0,
         'space-before-function-paren': 0,
+        'no-unused-vars': 0,
     },
 };
