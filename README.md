@@ -12,6 +12,8 @@ npm start
 
 -   https://www.mzitu.com/ 妹子图
 
+<img src='./md/picture.png' width="375"/>
+
 ## vux
 
 https://doc.vux.li/zh-CN/components/v-chart.html

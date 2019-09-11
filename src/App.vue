@@ -1,11 +1,11 @@
 <template>
     <div class="App">
         <Drawer
-            width="2rem"
+            width="2.3rem"
             show-mode="push"
             placement="left"
             :show="show"
-            :drawer-style="{'background-color':'#35495e', width: '2rem'}"
+            :drawer-style="{'background-color':'#333332', width: '2.3rem'}"
         >
             <!-- 侧边栏 -->
             <div slot="drawer">
@@ -56,6 +56,7 @@ export default {
     },
     mounted: function() {
         this.$bus.on('app-show', () => {
+            console.log('is show');
             this.show = !this.show;
         });
     },
@@ -102,8 +103,7 @@ body {
     right: 0;
     bottom: 0.5rem;
     left: 0;
-    // overflow: scroll;
-    overflow: hidden;
+    overflow: scroll;
 }
 .flex1 {
     display: flex;
