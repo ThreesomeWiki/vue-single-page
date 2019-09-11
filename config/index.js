@@ -19,7 +19,7 @@ module.exports = {
         notifyOnErrors: true,
         poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-        // Use Eslint Loader?
+        // Use Eslint Loader
         // If true, your code will be linted during bundling and
         // linting errors and warnings will be shown in the console.
         useEslint: true,

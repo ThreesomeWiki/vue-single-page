@@ -11,9 +11,14 @@
         "e2e": "node test/e2e/runner.js",
         "test": "npm run unit && npm run e2e",
         "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-        "build": "node build/build.js"
+        "build": "node build/build.js",
+        "server": "nodemon ./api/index.js"
     },
     "dependencies": {
+        "http-proxy-middleware": "^0.20.0",
+        "koa": "^2.8.1",
+        "koa-router": "^7.4.0",
+        "koa2-connect": "^1.0.2",
         "vue": "^2.5.2",
         "vue-router": "^3.0.1",
         "vux": "^2.9.4"
