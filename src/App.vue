@@ -67,7 +67,7 @@ export default {
                     link: '/',
                 },
                 {
-                    tag: '漫画',
+                    tag: '简书',
                     link: '/',
                 },
             ],
@@ -75,7 +75,6 @@ export default {
     },
     mounted: function() {
         this.$bus.on('app-show', () => {
-            console.log('is show');
             this.show = !this.show;
         });
     },
@@ -92,6 +91,12 @@ body {
     padding: 0;
     height: 100%;
     font-size: 0.16rem;
+}
+div,
+article,
+header,
+footer {
+    box-sizing: border-box;
 }
 .App {
     max-width: 500px;
@@ -131,11 +136,12 @@ body {
     bottom: 0;
     left: 0;
     height: 0.5rem;
-    background: black;
+    background: white;
     max-width: 500px;
     margin: 0 auto;
+    border-top: 1px solid #f2f5f2;
     .tab {
-        color: white;
+        color: #777;
         font-size: 0.18rem;
     }
     a {

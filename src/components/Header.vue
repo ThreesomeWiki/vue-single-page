@@ -1,27 +1,44 @@
 <template>
-    <header class="Header flex-row align-items-center justify-content-between" :style="headerStyle">
+    <header
+        :class="`Header flex-row align-items-center ${!left && !right ? 'justify-content-center':'justify-content-between'}`"
+        :style="headerStyle"
+    >
         <!-- left -->
-        <span class="iconfont icon-menu menu" :style="leftStyle" v-show="left" @click="leftHandle"></span>
+        <span
+            class="iconfont icon-menu menu"
+            :style="leftStyle"
+            v-if="(left || right) && !$slots['left']"
+            @click="leftHandle"
+        />
+        <slot name="left" />
         <!-- title -->
         <span v-if="!$slots['title']">{{title}}</span>
-        <!-- title slot -->
         <slot name="title" />
         <!-- right -->
-        <span :class="`iconfont icon-${right} right`" :style="rightStyle" v-show="left"></span>
+        <span
+            v-if="(left || right) && !$slots['right']"
+            :class="`iconfont icon-${right} right`"
+            :style="rightStyle"
+            @click="rightHandle"
+        />
+        <slot name="right" />
     </header>
 </template>
 <script>
 export default {
-    props: [
-        'title',
-        'left',
-        'right',
-        'headerStyle',
-        'leftHandle',
-        'leftStyle',
-        'rightStyle',
-        'titleStyle',
-    ],
+    props: {
+        title: { default: '' },
+        left: { default: '' },
+        right: { default: '' },
+        headerStyle: { default: {} },
+        leftStyle: { default: {} },
+        rightStyle: { default: {} },
+        leftHandle: { type: Function, default: () => {} },
+        rightHandle: { type: Function, default: () => {} },
+    },
+    data: function() {
+        return {};
+    },
     mounted: function() {},
 };
 </script>

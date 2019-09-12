@@ -6,6 +6,8 @@ import Story from '@/view/story/Story';
 import Picture from '@/view/picture/Picture';
 // 福利吧
 import Fuliba from '@/view/fuliba/Fuliba';
+// 简书
+import Jianshu from '@/view/jianshu/Jianshu';
 
 Vue.use(Router);
 
@@ -26,6 +28,10 @@ export default new Router({
         {
             path: '/fuliba',
             component: Fuliba,
+        },
+        {
+            path: '/jianshu',
+            component: Jianshu,
         },
     ],
 });
