@@ -4,6 +4,8 @@ import Router from 'vue-router';
 import Story from '@/view/story/Story';
 // 美图
 import Picture from '@/view/picture/Picture';
+// 福利吧
+import Fuliba from '@/view/fuliba/Fuliba';
 
 Vue.use(Router);
 
@@ -20,6 +22,10 @@ export default new Router({
         {
             path: '/picture',
             component: Picture,
+        },
+        {
+            path: '/fuliba',
+            component: Fuliba,
         },
     ],
 });

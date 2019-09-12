@@ -63,7 +63,7 @@ export default {
                     link: '/',
                 },
                 {
-                    tag: '视频',
+                    tag: '福利吧',
                     link: '/',
                 },
                 {

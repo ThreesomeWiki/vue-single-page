@@ -1,13 +1,27 @@
 <template>
     <header class="Header flex-row align-items-center justify-content-between" :style="headerStyle">
-        <span class="iconfont icon-menu menu" v-if="left" @click="leftHandle"></span>
-        <span>{{title}}</span>
-        <span :class="`iconfont icon-${right} right`" v-if="left"></span>
+        <!-- left -->
+        <span class="iconfont icon-menu menu" :style="leftStyle" v-show="left" @click="leftHandle"></span>
+        <!-- title -->
+        <span v-if="!$slots['title']">{{title}}</span>
+        <!-- title slot -->
+        <slot name="title" />
+        <!-- right -->
+        <span :class="`iconfont icon-${right} right`" :style="rightStyle" v-show="left"></span>
     </header>
 </template>
 <script>
 export default {
-    props: ['title', 'left', 'right', 'headerStyle', 'leftHandle'],
+    props: [
+        'title',
+        'left',
+        'right',
+        'headerStyle',
+        'leftHandle',
+        'leftStyle',
+        'rightStyle',
+        'titleStyle',
+    ],
     mounted: function() {},
 };
 </script>
