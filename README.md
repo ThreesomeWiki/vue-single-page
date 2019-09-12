@@ -16,6 +16,12 @@ npm start
 
 <img src='./md/picture-v1.png' width="375"/>
 
+## 福利吧
+
+-   https://fulibus.net
+
+<img src='./md/fuliba.png' width="375"/>
+
 ## vux
 
 https://doc.vux.li/zh-CN/components/v-chart.html
