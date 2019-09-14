@@ -8,6 +8,8 @@ import Picture from '@/view/picture/Picture';
 import Fuliba from '@/view/fuliba/Fuliba';
 // 简书
 import Jianshu from '@/view/jianshu/Jianshu';
+// 虎扑
+import Hupu from '@/view/hupu/Hupu';
 
 Vue.use(Router);
 
@@ -32,6 +34,10 @@ export default new Router({
         {
             path: '/jianshu',
             component: Jianshu,
+        },
+        {
+            path: '/hupu',
+            component: Hupu,
         },
     ],
 });

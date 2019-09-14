@@ -70,6 +70,10 @@ export default {
                     tag: '简书',
                     link: '/',
                 },
+                {
+                    tag: '虎扑',
+                    link: '/',
+                },
             ],
         };
     },
@@ -95,6 +99,8 @@ body {
 div,
 article,
 header,
+nav,
+ul,
 footer {
     box-sizing: border-box;
 }
