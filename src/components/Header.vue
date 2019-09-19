@@ -30,9 +30,24 @@ export default {
         title: { default: '' },
         left: { default: '' },
         right: { default: '' },
-        headerStyle: { default: {} },
-        leftStyle: { default: {} },
-        rightStyle: { default: {} },
+        headerStyle: {
+            type: Object,
+            default: () => {
+                return {};
+            },
+        },
+        leftStyle: {
+            type: Object,
+            default: () => {
+                return {};
+            },
+        },
+        rightStyle: {
+            type: Object,
+            default: () => {
+                return {};
+            },
+        },
         leftHandle: { type: Function, default: () => {} },
         rightHandle: { type: Function, default: () => {} },
     },
